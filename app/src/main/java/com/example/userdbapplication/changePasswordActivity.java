@@ -17,7 +17,7 @@ public class changePasswordActivity extends AppCompatActivity {
         EditText changeUsernameEditText = findViewById(R.id.changeUsernameEditText);
         EditText changePasswordEditText = findViewById(R.id.changePasswordEditText);
         EditText confirmChangePasswordEditText = findViewById(R.id.confirmChangePasswordEditText);
-        Button changePasswordButton = findViewById(R.id.changePasswordButton);
+        Button changePasswordButton = findViewById(R.id.cChangePasswordButton);
 
         DatabaseHelper db = new DatabaseHelper(this);
 
@@ -29,10 +29,10 @@ public class changePasswordActivity extends AppCompatActivity {
             if (password.equals(confirmPassword)) {
                 User user = new User(username, password);
                 int result = db.updatePassword(user);
-                if (result == 0) {
+                if (result == 2) {
                     Toast.makeText(this, "Successfully changed password", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "Password can't be changed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Password can't be changed ERROR " + result, Toast.LENGTH_SHORT).show();
                 }
             } else {
                 Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show();

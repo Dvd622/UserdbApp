@@ -55,7 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public List<User> fetchAllUser() {
         SQLiteDatabase db = this.getReadableDatabase();
-        String sql = "SELECT * FROM USERS"; // ???
+        String sql = "SELECT * FROM USERS";
         Cursor cursor = db.rawQuery(sql, null);
 
         List<User> userList = new ArrayList<>();
@@ -64,7 +64,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do {
                 User user = new User(cursor.getString(1), cursor.getString(2));
                 userList.add(user);
-            } while(cursor.moveToLast());
+                cursor.moveToNext();
+            } while(!cursor.isAfterLast());
         }
         return userList;
     }

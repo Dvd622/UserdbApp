@@ -19,6 +19,7 @@ public class ShowUsersActivity extends AppCompatActivity {
         ListView userListView = findViewById(R.id.userListView);
 
         DatabaseHelper db = new DatabaseHelper(this);
+
         List<User> userList = db.fetchAllUser();
 
         ArrayList<String> usernameList = new ArrayList<>();
