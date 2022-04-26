@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Userdb Application</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="show_all_users">Show all users</string>
+    <string name="change_password">Change password</string>
+    <string name="confirm_password">Confirm password</string>
+</resources>
